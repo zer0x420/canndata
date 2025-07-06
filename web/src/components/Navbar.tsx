@@ -16,7 +16,7 @@ const Navbar = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink href={import.meta.env.BASE_URL}>
               <b>CannData</b>
             </NavigationMenuLink>
           </NavigationMenuItem>
