@@ -7,10 +7,10 @@ Your contributions help improve the cannabis data ecosystem.
 
 1. Fork the repository.
 2. Create a new branch for your changes (`git checkout -b feature/my-contribution`).
-3. Add new strains, reviews, or SOPs following the existing structure inside the `data/` directory.
+3. Add new strains, products, reports following the existing structure inside the `data/` directory. Follow the [ReadMe](data/README.MD)
 4. Make sure your YAML files comply with the defined schema.  
    You can validate them by running `npm run validate`.
-5. Open a Pull Request (PR) describing your changes.
+5. If Valid, open a Pull Request (PR) describing your changes.
 
 ## Important Notes on License and Usage
 
@@ -18,7 +18,7 @@ By submitting a Pull Request, you agree that:
 
 - Your contributions are licensed under the project’s license terms:  
   - **Code:** MIT License  
-  - **Data (strains, reviews, SOPs):** Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)  
+  - **Data (strains, reports, products...):** Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)  
 - This means that your submitted data **may not be used for commercial purposes**.
 - **AI-generated content is not allowed.** All contributions must be your own original work or properly sourced from verified human-authored references.
 - **All personal data must be pseudonymized** so that no conclusions can be drawn about the identity of contributors or third parties.

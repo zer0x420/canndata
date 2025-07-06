@@ -1,7 +1,6 @@
 # Canndata
 
-**Canndata** is an project for the management and visualization of cannabis strains, products, reports and SOPs/tutorials.  
-Data is stored as YAML files in a Git repository, validated, converted to JSON and published via a static web application.
+**Canndata** is an project for the management and visualization of cannabis strains, products, reports and more. Data is stored as YAML files in a Git repository, validated, converted to JSON and published via a static web application.
 
 ## License
 

@@ -7,8 +7,9 @@
     "validate": "ts-node scripts/validate.ts",
     "convert": "ts-node scripts/convert.ts",
     "schema": "ts-node scripts/schema.ts",
-    "build": "npm run validate && npm run schema && npm run convert && cd web && npm run build",
-    "dev": "npm run validate && npm run schema && npm run convert && cd web && npm install && npm run dev"
+    "build-data": "npm run validate && npm run schema && npm run convert",
+    "build": "npm run build-data && cd web && npm run build",
+    "dev": "npm run build-data && cd web && npm install && npm run dev"
   },
   "keywords": [],
   "author": "",
