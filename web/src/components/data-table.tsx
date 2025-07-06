@@ -17,6 +17,7 @@ import {
   type SortingState
 } from "@tanstack/react-table"
 import { useState } from "react"
+import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext } from "./ui/pagination"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -46,7 +47,7 @@ const [globalFilter, setGlobalFilter] = useState("")
   return (
     <div className="rounded-md border">
       <div className="flex items-center justify-between p-2">
-              <div></div>
+        <div></div>
         <input
           type="text"
           value={globalFilter ?? ""}
@@ -84,6 +85,30 @@ const [globalFilter, setGlobalFilter] = useState("")
           ))}
         </TableBody>
       </Table>
+      <div className="p-4">
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious
+                onClick={() => table.previousPage()}
+                className={!table.getCanPreviousPage() ? "opacity-50 pointer-events-none" : ""}
+              />
+            </PaginationItem>
+            <PaginationItem>
+              <span className="text-sm px-2 py-1 rounded border">
+                Seite {table.getState().pagination.pageIndex + 1} von {table.getPageCount()}
+              </span>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext
+                onClick={() => table.nextPage()}
+                className={!table.getCanNextPage() ? "opacity-50 pointer-events-none" : ""}
+              />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+
     </div>
   )
 }
