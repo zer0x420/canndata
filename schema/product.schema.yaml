@@ -1,0 +1,54 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+title: Product
+description: "Schema for a Cannabis Product"
+required:
+  - name
+  - details
+allOf:
+  - not:
+      required: [id]
+  - not:
+      required: [strain_id]
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Product ID (Autoset on Convert)
+  strain_id:
+    type: string
+    description: Reference to Strain ID (Autoset on Convert)
+  name:
+    type: string
+    description: Name of the product (e.g. OG Kush)
+  details:
+    description: Product Details 
+    oneOf:
+      - type: object
+        required: [type, vendor]
+        properties:
+          type:
+            type: string
+            const: Medical
+            description: "type => Medical"
+          vendor:
+            type: string
+            description: "Vendor name for medicals"
+      - type: object
+        required: [type, breeder]
+        properties:
+          type:
+            type: string
+            const: Recreational
+            description: "type => Recreational"
+          breeder:
+            type: string
+            description: "Breeder name"
+          distribution:
+            type: string
+            enum: 
+              - Seeds
+              - Cut
+            description: "Distribution form"
+
+

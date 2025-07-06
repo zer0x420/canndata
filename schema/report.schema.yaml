@@ -1,0 +1,119 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+title: Report
+description: "Schema for a Product Report"
+required:
+  - user
+  - date
+  - rating
+  - title
+  - description
+allOf:
+  - not:
+      required: [id]
+  - not:
+      required: [product_id]
+properties:
+  id:
+    type: string
+    description: Report ID (Autoset on Convert)
+  product_id:
+    type: string
+    description: Related Product ID (Autoset on Convert)
+  user:
+    type: string
+    description: Autor of the Report
+  date:
+    type: string
+    format: date
+    description: Date of the Report
+  rating:
+    type: number
+    minimum: 0
+    maximum: 10
+    description: Autors Rating from 0 to 10
+  title:
+    type: string
+    description: Title of the Report
+  description:
+    type: string
+    description: Description of the Report
+  images:
+    type: array
+    items:
+      type: string
+    description: List of Images for the Report
+  details:
+    description: Report Details 
+    oneOf:
+      - type: object
+        required: [type, yield]
+        properties:
+          type:
+            type: string
+            const: Flower Rosin
+            description: "Type => Flower Rosin Report"
+          bagsize:
+            type: number
+            description: "Pressing BagSize in Mycron"
+          duration:
+            type: number
+            minimum: 1
+            maximum: 3600
+            description: "Pressing Duration in Secounds"
+          temperature:
+            type: number
+            minimum: 30
+            maximum: 500
+            description: "Pressing Temperature in C°"
+          yield:
+            type: number
+            minimum: 0
+            maximum: 100
+            description: "Rosin yield in %"
+      - type: object
+        required: [type, yield]
+        properties:
+          type:
+            type: string
+            const: Bubble Hash
+            description: "Type => Washing Report"
+          yield:
+            type: number
+            minimum: 0
+            maximum: 100
+            description: "Bubble Hash yield in %"
+          bagsize:
+            type: array
+            items:
+              type: string
+            description: "Washing Bags Sizes in Mycron"
+      - type: object
+        required: [type, yield]
+        properties:
+          type:
+            type: string
+            const: Grow
+            description: "Type => Grow Report"
+          yield:
+            type: number
+            minimum: 0
+            maximum: 1000
+            description: "Grow yield in Gram per Watts"
+          weeks:
+            type: number
+            minimum: 0
+            maximum: 1000
+            description: "Grow Weeks Seed to Harvest"
+      - type: object
+        required: [type, price]
+        properties:
+          type:
+            type: string
+            const: 'Shop'
+            description: "Type => Shopping Report"
+          price:
+            type: number
+            minimum: 0
+            maximum: 1000
+            description: "Shopping Price/Gram in €"

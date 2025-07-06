@@ -1,0 +1,58 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+type: object
+title: Strain
+description: "Schema for a Cannabis Strain"
+required:
+  - name
+  - description
+  - genetics
+allOf:
+  - not:
+      required: [id]
+additionalProperties: false
+properties:
+  id:
+    type: string
+    description: Strain ID (Autoset on Convert)
+  name:
+    type: string
+    description: "Strain Name"
+  description:
+    type: string
+    description: "Strain Description (Markdown)"
+  genetics:
+    type: string
+    description: "Genetic of the Strain"
+  terpene:
+    type: array
+    items:
+      type: string
+    description: "List of Main-Terpenes"
+  thc:
+    type: object
+    required: [min, max]
+    additionalProperties: false
+    properties:
+      min:
+        type: number
+        minimum: 0
+        maximum: 100
+      max:
+        type: number
+        minimum: 0
+        maximum: 100
+    description: "THC range in %"
+  cbd:
+    type: object
+    required: [min, max]
+    additionalProperties: false
+    properties:
+      min:
+        type: number
+        minimum: 0
+        maximum: 100
+      max:
+        type: number
+        minimum: 0
+        maximum: 100
+    description: "CBD range in %"

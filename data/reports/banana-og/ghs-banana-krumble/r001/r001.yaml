@@ -1,0 +1,11 @@
+user: zer0x
+date: 2025-03-01
+rating: 8
+details: 
+  type: Grow
+  yield: 2
+  weeks: 13
+title: Grow Report
+description: |
+  Very nice **Grow**! It was a lot of fun to grow the plant.
+images: ['image.png']
