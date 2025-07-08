@@ -1,0 +1,13 @@
+user: dera
+date: 2025-05-17
+rating: 9.8
+details: 
+  type: Flower Rosin
+  yield: 29.4
+  filter-size: 90
+  temperature: 85
+  pressure: 1200
+title: Flower Rosin Report
+description: |
+  Yields are high-range, taste is ok.
+images: ["image01.png", "image02.png", "image03.png"]
